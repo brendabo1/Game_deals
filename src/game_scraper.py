@@ -15,13 +15,12 @@ async def game_scraper(page, jogo: Dict) -> Dict:
     }
     
     try:        
-        # Navega para a página do jogo com timeout configurável
+        # Navega para a página do jogo
         await page.goto(jogo["url"], timeout=45000, wait_until="networkidle")
         
         # Aguarda carregamento da página
         await page.wait_for_load_state("domcontentloaded", timeout=30000)
         
-        # Extrai as ofertas
         ofertas = await extrair_ofertas(page)
         
         resultado["ofertas"] = ofertas

@@ -12,9 +12,7 @@ async def expandir_todas_as_ofertas(page):
     tentativas = 0
     tentativas_sem_mudanca = 0
     
-    
-    #tentativas < tentativas_maximas and
-    while expand_offers and tentativas_sem_mudanca < 5:
+    while expand_offers and tentativas_sem_mudanca < 8:
         try:
             # Conta os cards atuais
             cards_locator = page.locator(config.OFFER_CARD_SELECTOR)
@@ -22,7 +20,6 @@ async def expandir_todas_as_ofertas(page):
             
             #logger.info(f"Tentativa {tentativas + 1}: {quantidade_atual} ofertas encontradas")
             
-            # Procura botão "Mostrar mais"
             botao_locator = page.locator(config.SHOW_MORE_BUTTON_SELECTOR)
             
             if await botao_locator.count() == 0:
@@ -34,20 +31,20 @@ async def expandir_todas_as_ofertas(page):
             
             # Verifica se o botão está visível e habilitado
             if not await botao.is_visible():
-                # logger.info("Botão não está visível")
+                # "Botão não está visível"
                 break
                 
             # Tenta clicar com diferentes estratégias
             try:
-                # Estratégia 1: Click normal
+                # Click normal
                 await botao.click(timeout=5000)
             except:
                 try:
-                    # Estratégia 2: Click com force
+                    # Click com force
                     await botao.click(force=True, timeout=3000)
                 except:
                     try:
-                        # Estratégia 3: Click via JavaScript
+                        # Click via JavaScript
                         await page.evaluate("""(selector) => {
                             const btn = document.querySelector(selector);
                             if (btn) btn.click();
@@ -71,7 +68,7 @@ async def expandir_todas_as_ofertas(page):
             
             tentativas += 1
             
-            # Pequena pausa entre tentativas
+            # pausa entre tentativas
             await page.wait_for_timeout(1500)
             
         except Exception as e:
@@ -98,7 +95,6 @@ async def extrair_ofertas(page) -> List[Dict]:
             logger.warning("Seção 'Ofertas' não encontrada")
             return ofertas
         
-        # Expande todas as ofertas
         await expandir_todas_as_ofertas(page)
         
         # Aguarda um momento para garantir que tudo está carregado
@@ -216,7 +212,6 @@ async def processar_jogo(page, jogo: Dict) -> Dict:
     }
     
     try:        
-        # Navega para a página do jogo com timeout configurável
         await page.goto(jogo["url"], timeout=45000, wait_until="networkidle")
         
         # Aguarda carregamento da página
