@@ -7,9 +7,6 @@ from playwright.async_api import async_playwright
 
 
 async def executar_scraper(headless=True):
-    """
-    Função principal do scraper
-    """
     async with async_playwright() as p:
         # Configura o browser com opções para melhor performance
         browser = await p.chromium.launch(

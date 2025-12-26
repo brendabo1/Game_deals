@@ -5,7 +5,7 @@ from typing import Dict
 
 async def game_scraper(page, jogo: Dict) -> Dict:
     """
-    Processa um jogo individual com tratamento de erros robusto
+    Processa um jogo individual com tratamento de erros 
     """
     resultado = {
         "jogo": jogo,

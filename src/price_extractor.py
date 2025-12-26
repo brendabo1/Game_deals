@@ -2,7 +2,7 @@ import re
 
 async def extrair_preco(bloco):
     """
-    Extrai preço e parcelas de um bloco de preço
+    Extrai preço e parcelas de um bloco de oferta
     """
     try:
         texto = await bloco.inner_text()

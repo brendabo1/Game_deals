@@ -5,9 +5,6 @@ from typing import List, Dict
 
 
 async def expandir_todas_as_ofertas(page):
-    """
-    Estratégia robusta para expandir todas as ofertas
-    """
     expand_offers = True
     tentativas = 0
     tentativas_sem_mudanca = 0
