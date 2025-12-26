@@ -1,12 +1,11 @@
-# 🎮 Comparajogos Scraper — Web Scraping & Automação com Playwright
+# 🎮 GameDeals Scraper
 
 
 Um scraper para extração automatizada de ofertas de jogos de tabuleiro do site ComparaJogos.com.br que permite coletar dados de preços, lojas, formas de pagamento e links diretos para as melhores ofertas do mercado.
 
 
 ## Sobre o projeto
-Acompanhar manualmente preços de jogos em múltiplas lojas é um processo demorado e propenso a erros. (falta falar de web scraping)
-
+Acompanhar manualmente preços de jogos em múltiplas lojas é um processo demorado e propenso a erros. 
 Desse modo, o Game_Deals Scraper foi desenvolvido para automatizar a coleta de informações sobre jogos de tabuleiro, oferecendo aos usuários uma visão completa das melhores ofertas disponíveis em diferentes lojas brasileiras apresentadas no site ComparaJogos.com.br. Para essa tarefa, a ferramenta Playwright foi estrategicamente escolhida por possuir suporte nativo a páginas altamente dinâmicas, API assíncrona, auto-wait Nativo que aguarda elementos antes de interações, e facilidade para lidar com cliques, scroll, botões e eventos JS. Além disso, o Playwright permite simular um usuário real, reduzindo falhas em páginas com carregamento progressivo de conteúdo. Portanto, o scraper transforma um processo manual e demorado em uma operação automatizada e eficiente.
 
 ## Instalação
