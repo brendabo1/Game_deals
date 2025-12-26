@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+.eggs/
+
+
+# Virtual environment
+.myvenv
+myvenv/
+bin/
+lib/
+include/
+
+/src_problem
+.vscode/ # VS Code
+*.swp
+*.swo
+
+Thumbs.db # Windows
+
+# Specific to testing/linting tools
+.pytest_cache/
+.coverage
+
+
+# User-specific credentials and configuration (CRITICAL to ignore)
+*.env
+credentials.json
