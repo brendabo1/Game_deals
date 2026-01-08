@@ -21,12 +21,22 @@ git clone https://github.com/brendabo1/Game_deals.git
 ```
 pip install -r requirements.txt
 playwright install
+playwright install chromium
 ```
+
 #### 3. Executar o scraper
+Para executar o scrapping com exibições formatadas no terminal
 ```
 cd src
+python scraper.py
+```
+Para executar o scraper via api 
+```
+cd src/api
 python main.py
 ```
+
+Os jogos populares poderão então ser acessados no enpoint /jogos-populares
 
 
 ## Objetivo 
